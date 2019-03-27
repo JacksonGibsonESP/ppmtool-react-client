@@ -11,8 +11,8 @@ class AddProject extends Component {
       projectName: "",
       projectIdentifier: "",
       description: "",
-      start_date: "",
-      end_date: "",
+      startDate: "",
+      endDate: "",
       errors: {}
     };
     this.onChange = this.onChange.bind(this);
@@ -23,7 +23,7 @@ class AddProject extends Component {
     if (nextProps.errors) {
       this.setState({
         errors: nextProps.errors
-      })
+      });
     }
   }
 
@@ -38,15 +38,15 @@ class AddProject extends Component {
       projectName: this.state.projectName,
       projectIdentifier: this.state.projectIdentifier,
       description: this.state.description,
-      start_date: this.state.start_date,
-      end_date: this.state.end_date
+      startDate: this.state.startDate,
+      endDate: this.state.endDate
     };
 
     this.props.createProject(newProject, this.props.history);
   }
 
   render() {
-    const {errors} = this.state;
+    const { errors } = this.state;
     return (
       <div className="project">
         <div className="container">
@@ -58,7 +58,7 @@ class AddProject extends Component {
                 <div className="form-group">
                   <input
                     type="text"
-                    className={classnames("form-control form-control-lg",{
+                    className={classnames("form-control form-control-lg", {
                       "is-invalid": errors.projectName
                     })}
                     placeholder="Project Name"
@@ -67,15 +67,13 @@ class AddProject extends Component {
                     onChange={this.onChange}
                   />
                   {errors.projectName && (
-                    <div className="invalid-feedback">
-                      {errors.projectName}
-                    </div>
+                    <div className="invalid-feedback">{errors.projectName}</div>
                   )}
                 </div>
                 <div className="form-group">
                   <input
                     type="text"
-                    className={classnames("form-control form-control-lg",{
+                    className={classnames("form-control form-control-lg", {
                       "is-invalid": errors.projectIdentifier
                     })}
                     placeholder="Unique Project ID"
@@ -91,7 +89,7 @@ class AddProject extends Component {
                 </div>
                 <div className="form-group">
                   <textarea
-                    className={classnames("form-control form-control-lg",{
+                    className={classnames("form-control form-control-lg", {
                       "is-invalid": errors.description
                     })}
                     placeholder="Project Description"
@@ -100,9 +98,7 @@ class AddProject extends Component {
                     onChange={this.onChange}
                   />
                   {errors.description && (
-                    <div className="invalid-feedback">
-                      {errors.description}
-                    </div>
+                    <div className="invalid-feedback">{errors.description}</div>
                   )}
                 </div>
                 <h6>Start Date</h6>
@@ -110,8 +106,8 @@ class AddProject extends Component {
                   <input
                     type="date"
                     className="form-control form-control-lg"
-                    name="start_date"
-                    value={this.state.start_date}
+                    name="startDate"
+                    value={this.state.startDate}
                     onChange={this.onChange}
                   />
                 </div>
@@ -120,8 +116,8 @@ class AddProject extends Component {
                   <input
                     type="date"
                     className="form-control form-control-lg"
-                    name="end_date"
-                    value={this.state.end_date}
+                    name="endDate"
+                    value={this.state.endDate}
                     onChange={this.onChange}
                   />
                 </div>
@@ -145,7 +141,7 @@ AddProject.propTypes = {
 
 const mapStateToProps = state => ({
   errors: state.errors
-})
+});
 
 export default connect(
   mapStateToProps,
