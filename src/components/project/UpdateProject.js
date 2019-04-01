@@ -77,6 +77,7 @@ class UpdateProject extends Component {
                     type="text"
                     className="form-control form-control-lg "
                     placeholder="Project Name"
+                    name="projectName"
                     value={this.state.projectName}
                     onChange={this.onChange}
                   />
@@ -86,7 +87,9 @@ class UpdateProject extends Component {
                     type="text"
                     className="form-control form-control-lg"
                     placeholder="Unique Project ID"
+                    name="projectIdentifier"
                     value={this.state.projectIdentifier}
+                    onChange={this.onChange}
                     disabled
                   />
                 </div>
@@ -94,6 +97,7 @@ class UpdateProject extends Component {
                   <textarea
                     className="form-control form-control-lg"
                     placeholder="Project Description"
+                    name="description"
                     value={this.state.description}
                     onChange={this.onChange}
                   />
