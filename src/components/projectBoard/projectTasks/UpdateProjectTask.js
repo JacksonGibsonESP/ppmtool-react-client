@@ -110,7 +110,7 @@ class UpdateProjectTask extends Component {
               </Link>
               <h4 className="display-4 text-center">Update Project Task</h4>
               <p className="lead text-center">
-                Project Name {this.state.projectIdentifier} + Project Task Id:{" "}
+                Project Name: {this.state.projectIdentifier} + Project Task Id:{" "}
                 {this.state.projectSequence}
               </p>
               <form onSubmit={this.onSubmit}>
