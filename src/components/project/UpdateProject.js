@@ -34,10 +34,11 @@ class UpdateProject extends Component {
       id,
       projectName,
       projectIdentifier,
-      description,
-      startDate,
-      endDate
+      description
     } = nextProps.project;
+
+    const startDate = !nextProps.project.startDate ? "" : nextProps.project.startDate;
+    const endDate = !nextProps.project.endDate ? "" : nextProps.project.endDate;
 
     this.setState({
       id,

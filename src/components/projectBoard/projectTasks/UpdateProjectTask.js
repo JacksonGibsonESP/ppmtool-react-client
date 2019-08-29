@@ -47,11 +47,12 @@ class UpdateProjectTask extends Component {
       acceptanceCriteria,
       status,
       priority,
-      dueDate,
       projectIdentifier,
       createdAt,
       updatedAt
     } = nextProps.projectTask;
+
+    const dueDate = !nextProps.projectTask.dueDate ? "" : nextProps.projectTask.dueDate;
 
     this.setState({
       id,
